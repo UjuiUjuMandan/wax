@@ -62,6 +62,7 @@ class ComicImage extends StatefulWidget {
   final double? height;
   final Function(Size size)? onTrueSize;
   final List<TextMenu>? addLongPressMenus;
+  final bool ignoreFormat;
 
   const ComicImage({
     required this.url,
@@ -69,6 +70,7 @@ class ComicImage extends StatefulWidget {
     this.height,
     this.onTrueSize,
     this.addLongPressMenus,
+    this.ignoreFormat = false, 
     Key? key,
   }) : super(key: key);
 
@@ -86,7 +88,7 @@ class _ComicImageState extends State<ComicImage> {
   }
 
   Future<String> _init() async {
-    final cache = await methods.cacheImage(widget.url);
+    final cache = await methods.cacheImage(widget.url, ignoreFormat: widget.ignoreFormat);
     if (widget.onTrueSize != null) {
       widget.onTrueSize!(Size(cache.width.toDouble(), cache.height.toDouble()));
     }

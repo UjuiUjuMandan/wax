@@ -120,12 +120,14 @@ class Methods {
     // todo
   }
 
-  Future<CacheImageResult> cacheImage(String url) async {
+  Future<CacheImageResult> cacheImage(String url,
+      {bool ignoreFormat = false}) async {
     final buff = await _flatInvoke(
         "cacheImage",
         CacheImageQuery(
           host: host,
           url: url,
+          ignoreFormat: ignoreFormat,
         ));
     return CacheImageResult.fromBuffer(buff);
   }
@@ -203,7 +205,7 @@ class Methods {
   Future saveViewInfo(ComicSimple simple) async {
     return _flatInvoke(
       "initComicViewLog",
-       simple,
+      simple,
     );
   }
 
@@ -220,19 +222,19 @@ class Methods {
   Future updateViewLog($fixnum.Int64 id, int initRank) async {
     return _flatInvoke(
       "saveComicViewLog",
-       ComicViewLogDto(
+      ComicViewLogDto(
         comicId: id,
         position: $fixnum.Int64(initRank),
-       ),
+      ),
     );
   }
 
   Future<int> loadViewLog($fixnum.Int64 id) async {
-    var buffer =  await _flatInvoke(
+    var buffer = await _flatInvoke(
       "loadComicViewLog",
-       ComicViewLogDto(
+      ComicViewLogDto(
         comicId: id,
-       ),
+      ),
     );
     var result = ComicViewLogDto.fromBuffer(buffer);
     return result.position.toInt();

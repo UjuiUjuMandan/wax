@@ -776,6 +776,7 @@ class CacheImageQuery extends $pb.GeneratedMessage {
   factory CacheImageQuery({
     $core.String? host,
     $core.String? url,
+    $core.bool? ignoreFormat,
   }) {
     final $result = create();
     if (host != null) {
@@ -783,6 +784,9 @@ class CacheImageQuery extends $pb.GeneratedMessage {
     }
     if (url != null) {
       $result.url = url;
+    }
+    if (ignoreFormat != null) {
+      $result.ignoreFormat = ignoreFormat;
     }
     return $result;
   }
@@ -793,6 +797,7 @@ class CacheImageQuery extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CacheImageQuery', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'host')
     ..aOS(2, _omitFieldNames ? '' : 'url')
+    ..aOB(3, _omitFieldNames ? '' : 'ignoreFormat', protoName: 'ignoreFormat')
     ..hasRequiredFields = false
   ;
 
@@ -834,6 +839,15 @@ class CacheImageQuery extends $pb.GeneratedMessage {
   $core.bool hasUrl() => $_has(1);
   @$pb.TagNumber(2)
   void clearUrl() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get ignoreFormat => $_getBF(2);
+  @$pb.TagNumber(3)
+  set ignoreFormat($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIgnoreFormat() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIgnoreFormat() => clearField(3);
 }
 
 class CacheImageResult extends $pb.GeneratedMessage {

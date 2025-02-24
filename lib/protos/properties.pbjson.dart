@@ -182,13 +182,14 @@ const CacheImageQuery$json = {
   '2': [
     {'1': 'host', '3': 1, '4': 1, '5': 9, '10': 'host'},
     {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
+    {'1': 'ignoreFormat', '3': 3, '4': 1, '5': 8, '10': 'ignoreFormat'},
   ],
 };
 
 /// Descriptor for `CacheImageQuery`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List cacheImageQueryDescriptor = $convert.base64Decode(
-    'Cg9DYWNoZUltYWdlUXVlcnkSEgoEaG9zdBgBIAEoCVIEaG9zdBIQCgN1cmwYAiABKAlSA3VybA'
-    '==');
+    'Cg9DYWNoZUltYWdlUXVlcnkSEgoEaG9zdBgBIAEoCVIEaG9zdBIQCgN1cmwYAiABKAlSA3VybB'
+    'IiCgxpZ25vcmVGb3JtYXQYAyABKAhSDGlnbm9yZUZvcm1hdA==');
 
 @$core.Deprecated('Use cacheImageResultDescriptor instead')
 const CacheImageResult$json = {

@@ -66,6 +66,7 @@ message ComicPagesResult {
 message CacheImageQuery {
   string host = 1;
   string url = 2;
+  bool ignoreFormat = 3;
 }
 
 message CacheImageResult {
