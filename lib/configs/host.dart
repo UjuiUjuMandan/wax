@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:wax/basic/commons.dart';
 import 'package:wax/basic/methods.dart';
 
-const _defaultHost = "https://www.wnacg.com";
+const _defaultHost = "https://www.wn01.uk";
 const _hostMap = {
-  "https://www.hm1.lol": "H1",
-  "https://www.hm2.lol": "H2",
-  "https://www.hm3.lol": "H3",
+  "https://www.wn02.uk": "W2",
+  "https://www.wn01.uk": "W1",
 };
 
 late String host;
