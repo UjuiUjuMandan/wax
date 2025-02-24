@@ -173,10 +173,20 @@ Widget buildMock(double? width, double? height) {
 }
 
 Widget buildError(double? width, double? height) {
-  return Image(
-    image: const AssetImage('lib/assets/error.png'),
+  double? size;
+  if (width != null && height != null) {
+    size = width < height ? width : height;
+  }
+  return SizedBox(
     width: width,
     height: height,
+    child: Center(
+      child: Icon(
+        Icons.error_outline,
+        size: size,
+        color: Colors.grey,
+      ),
+    ),
   );
 }
 
